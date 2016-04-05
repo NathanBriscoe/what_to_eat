@@ -5,35 +5,24 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Title</title>
     <link href="https://code.ionicframework.com/1.0.0/css/ionic.min.css" rel="stylesheet">
-    <!--<script src="vendors/angular/angular.min.js"></script>    part of ionicbundle-->
+    <script src="vendors/angular/angular.min.js"></script>
+    <script src="vendors/angular-route/angular-route.min.js"></script>
     <script src="assets/scripts/client.min.js"></script>
-    <script src="https://code.ionicframework.com/1.0.0/js/ionic.bundle.js"></script>
-
+    <!--<script src="https://code.ionicframework.com/1.0.0/js/ionic.bundle.js"></script>-->
+    <base href="/">
 </head>
-<body ng-controller="recipeListsController">
+<body ng-controller="homeController">
+
+
 <h1>Hello World!</h1>
 
-Search: <input ng-model="query">
 
-<p>Total Number of Recipes: {{recipes}}</p>
+<div class="view-container">
+    <div ng-view class="view-frame"></div>
+</div>
 
 
-<ul>
-    <li ng-repeat="recipe in recipes | filter:query">
-        <span>{{recipe.name}}</span>
-        <p>{{recipe.ingredients}}</p>
-    </li>
-</ul>
 
-<!--<ion-pane>-->
-    <!--<ion-header-bar class="bar-stable">-->
-        <!--<h1 class="title">Awesome App</h1>-->
-    <!--</ion-header-bar>-->
-    <!--<ion-content class="padding">-->
-        <!--<button class="button button-assertive">I'm a button</button>-->
-    <!--</ion-content>-->
-<!--</ion-pane>-->
-<!--<div ng-controller="____________"></div>-->
 
 </body>
 </html>
