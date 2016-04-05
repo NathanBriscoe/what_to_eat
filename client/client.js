@@ -18,8 +18,13 @@ app.config(['$routeProvider','$locationProvider', function($routeProvider, $loca
 
     }]);
 
-    app.controller('homeController', ['$scope', function ($scope) {
-
+    app.controller('homeController', ['$scope', '$http', function ($scope, $http) {
+        $scope.recipes = function(){
+            $http.get('/recipes')
+                .then(function(response){
+                    $scope.content = response.data;
+                });
+        };
     }]);
 
     app.controller('recipeListsController', ['$scope', function ($scope) {
