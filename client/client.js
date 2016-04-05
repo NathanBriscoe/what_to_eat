@@ -18,12 +18,9 @@ app.config(['$routeProvider','$locationProvider', function($routeProvider, $loca
 
     }]);
 
-    app.controller('homeController', ['$scope', '$http', function ($scope, $http) {
+    app.controller('homeController', ['$scope', '$location', function ($scope, $location) {
         $scope.recipes = function(){
-            $http.get('/recipes')
-                .then(function(response){
-                    $scope.content = response.data;
-                });
+            $location.path('/recipes')
         };
     }]);
 

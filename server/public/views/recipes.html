@@ -1,5 +1,5 @@
 
-<div ng-controller="recipeListsController">
+<div>
 
 Search: <input ng-model="query">
 
@@ -15,8 +15,8 @@ Sort by:
 
 <ul class="recipes">
     <li ng-repeat="recipe in recipes | filter:query | orderBy:orderProp" class="thumbnail">
-        <a href="#/recipes/{{recipe.id}}" class="thumb"><img ng-src="{{recipe.imageUrl}}"></a>
-        <a href="#/recipes/{{recipe.id}}">{{recipe.name}}</a>
+        <a href="#/recipe/{{recipe.id}}" class="thumb"><img ng-src="{{recipe.imageUrl}}"></a>
+        <a href="#/recipe/{{recipe.id}}">{{recipe.name}}</a>
         <span>{{recipe.name}}</span>
         <p>{{recipe.ingredients}}</p>
     </li>
