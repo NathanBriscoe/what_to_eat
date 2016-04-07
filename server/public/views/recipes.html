@@ -12,15 +12,37 @@ Sort by:
 
 <p>Total Number of Recipes: {{recipes}}</p>
 
+    <div class="input-group search-bar">
+        <input type="text"
+               ng-model="search"
+               ng-model-options="{ debounce: 800 }"
+               placeholder="What are you hungry for?"/><!-- debounce 800 prevents the application from making unnecessary calls to the API.-->
+    </div>
 
-<ul class="recipes">
-    <li ng-repeat="recipe in recipes | filter:query | orderBy:orderProp" class="thumbnail">
-        <a href="#/recipe/{{recipe.id}}" class="thumb"><img ng-src="{{recipe.imageUrl}}"></a>
-        <a href="#/recipe/{{recipe.id}}">{{recipe.name}}</a>
-        <span>{{recipe.name}}</span>
-        <p>{{recipe.ingredients}}</p>
-    </li>
-</ul>
+    <div id="main-info"
+         ng-include="'partials/main-info.html'">
+    </div>
+
+    <div id="related-results"
+         ng-include="'partials/related-results.html'">
+    </div>
+
+<!--The main-info and related-results divs will be used to display information about the current recipe and a list of related recipes respectively. The information will be displayed in partials which are fetched, compiled and included by the ng-include directive.-->
+
+
+
+
+
+
+
+<!--<ul class="recipes">-->
+    <!--<li ng-repeat="recipe in recipes | filter:query | orderBy:orderProp" class="thumbnail">-->
+        <!--<a href="#/recipe/{{recipe.id}}" class="thumb"><img ng-src="{{recipe.imageUrl}}"></a>-->
+        <!--<a href="#/recipe/{{recipe.id}}">{{recipe.name}}</a>-->
+        <!--<span>{{recipe.name}}</span>-->
+        <!--<p>{{recipe.ingredients}}</p>-->
+    <!--</li>-->
+<!--</ul>-->
 
 
 </div>

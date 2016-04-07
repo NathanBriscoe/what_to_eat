@@ -12,21 +12,40 @@ app.config(['$routeProvider','$locationProvider', function($routeProvider, $loca
         .when('/recipes', {
             templateUrl: 'views/recipes.html',
             controller: 'recipeListsController'
+        })
+        .when('/buildrecipes', {
+            templateUrl: 'views/buildrecipes.html',
+            controller: 'buildRecipeController'
         });
 
     $locationProvider.html5Mode(true);
 
     }]);
-
+                    //Controller for the home...?
     app.controller('homeController', ['$scope', '$location', function ($scope, $location) {
         $scope.recipes = function(){
             $location.path('/recipes')
         };
+        $scope.buildRecipes = function(){
+            $location.path('/buildrecipes')
+        };
     }]);
+                    //Controller for the recipes List
+    app.controller('recipeListsController', ['$scope', '$http', function ($scope, $http) {
+        $scope.$watch('search', function(){
+            fetch();
+            function fetch(){
+                $http.get("http://www.omdbapi.com/?t=" + $scope.search + "&tomatoes=true&plot=full")
+                    .then(function(response){ $scope.details = response.data; });
 
-    app.controller('recipeListsController', ['$scope', function ($scope) {
+                $http.get("http://www.omdbapi.com/?s=" + $scope.search)
+                    .then(function(response){ $scope.related = response.data; });
+            }
+        })
+    }]);
+                //Controller for building recipes
+    app.controller('buildRecipesController', ['$scope', '$location', function ($scope, $location) {
 
     }]);
-
 
 

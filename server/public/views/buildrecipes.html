@@ -1,0 +1,18 @@
+<div>
+    <h1>Build a Recipe</h1>
+    <div ng-controller="buildRecipeController">
+        <form>
+            <input type="text" placeholder="Recipe Name" ng-model="recipeName" required><br>
+            <br>
+            <input type="text" placeholder="1" ng-model="lastname" required><br>
+            <br>
+            <input type="text" placeholder="2" ng-model="username" required><br>
+            <br>
+            <input type="password" placeholder="3" ng-model="password" required><br>
+            <br>
+            <input type="email" placeholder="4" ng-model="email">
+            <br>
+            <button ng-click="signupSubmit()" data-dismiss="modal">Submit</button>
+        </form>
+    </div>
+</div>

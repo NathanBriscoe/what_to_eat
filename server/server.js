@@ -2,7 +2,10 @@
  * Created by NathanBriscoe on 3/28/16.
  */
 var express = require('express');
+var moment = require('moment');
 var app = express();
+
+moment().format();
 
 
 //Serving up the static files such as HTML and CSS
