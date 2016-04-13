@@ -2,14 +2,17 @@
  * Created by NathanBriscoe on 3/28/16.
  */
 var express = require('express');
-var moment = require('moment');
 var app = express();
 
-moment().format();
+//var bodyParser = require('body-parser');
 
 
-//Serving up the static files such as HTML and CSS
-app.use(express.static("server/public"));
+
+app.use(express.static('server/public'));// this is to use static files from the public folder such as img, css and javascript files
+
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({ extended: true }));
+
 
 
 //sever will offer up the Home Page

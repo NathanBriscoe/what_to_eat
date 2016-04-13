@@ -1,16 +1,16 @@
-
 <div>
 
-Search: <input ng-model="query">
+    Search:
+        <input ng-model="query">
 
-Sort by:
-<select ng-model="orderProp">
-    <option value="name">Alphabetical</option>
-    <option value="calories">Calories</option>
-    <option value="time">Prep Time</option>
-</select>
+    Sort by:
+        <select ng-model="orderProp">
+            <option value="name">Alphabetical</option>
+            <option value="calories">Calories</option>
+            <option value="time">Prep Time</option>
+        </select>
 
-<p>Total Number of Recipes: {{recipes}}</p>
+    <p>Total Number of Recipes: {{recipes}}</p>
 
     <div class="input-group search-bar">
         <input type="text"
@@ -19,20 +19,15 @@ Sort by:
                placeholder="What are you hungry for?"/><!-- debounce 800 prevents the application from making unnecessary calls to the API.-->
     </div>
 
-    <div id="main-info"
-         ng-include="'partials/main-info.html'">
-    </div>
+    <!--<div id="main-info"-->
+         <!--ng-include="'partials/main-info.html'">-->
+    <!--</div>-->
 
-    <div id="related-results"
-         ng-include="'partials/related-results.html'">
-    </div>
+    <!--<div id="related-results"-->
+         <!--ng-include="'partials/related-results.html'">-->
+    <!--</div>-->
 
 <!--The main-info and related-results divs will be used to display information about the current recipe and a list of related recipes respectively. The information will be displayed in partials which are fetched, compiled and included by the ng-include directive.-->
-
-
-
-
-
 
 
 <!--<ul class="recipes">-->
@@ -44,5 +39,20 @@ Sort by:
     <!--</li>-->
 <!--</ul>-->
 
+
+</div>
+
+<div ng-controller="searchByIngredientsController">
+    <h3>Search by what ingredients you have:</h3>
+        Ingredient:<br>
+        <ul>
+            <li ng-repeat="ingredients in ingredientTypedIn">
+                {{ingredients}}
+                <span ng-click="removeItem($index)">&times;</span>
+            </li>
+        </ul>
+        <input ng-model="addMe">
+        <button ng-click="addNewIngredient()">Add</button>
+        <p>{{errortext}}</p>
 
 </div>

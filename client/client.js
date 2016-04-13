@@ -29,23 +29,53 @@ app.config(['$routeProvider','$locationProvider', function($routeProvider, $loca
         $scope.buildRecipes = function(){
             $location.path('/buildrecipes')
         };
+        $scope.today = moment().format('MMMM Do YYYY');
+
+        var myTimer = setInterval(myClock, 1000);
+        function myClock() {
+            document.getElementById("demo").innerHTML =
+                new Date().toLocaleTimeString();
+        }
     }]);
                     //Controller for the recipes List
     app.controller('recipeListsController', ['$scope', '$http', function ($scope, $http) {
-        $scope.$watch('search', function(){
-            fetch();
-            function fetch(){
-                $http.get("http://www.omdbapi.com/?t=" + $scope.search + "&tomatoes=true&plot=full")
-                    .then(function(response){ $scope.details = response.data; });
-
-                $http.get("http://www.omdbapi.com/?s=" + $scope.search)
-                    .then(function(response){ $scope.related = response.data; });
-            }
-        })
+        //$scope.$watch('search', function(){
+        //    fetch();
+        //    function fetch(){
+        //        $http.get("http://www.omdbapi.com/?t=" + $scope.search + "&tomatoes=true&plot=full")
+        //            .then(function(response){ $scope.details = response.data; });
+        //
+        //        $http.get("http://www.omdbapi.com/?s=" + $scope.search)
+        //            .then(function(response){ $scope.related = response.data; });
+        //    }
+        //})
     }]);
                 //Controller for building recipes
-    app.controller('buildRecipesController', ['$scope', '$location', function ($scope, $location) {
+    //app.controller('buildRecipesController', ['$scope', '$location', function ($scope, $location){
+    //    $scope.addIngredient = function
+    //
+    //}]);
+    app.controller('searchByIngredientsController', ['$scope', '$http', function($scope, $http){
+
+        $scope.ingredientTypedIn = [];
+        $scope.addNewIngredient = function(){
+            $scope.errortext = "";
+            if (!$scope.addMe) {return;}
+            if ($scope.ingredientTypedIn.indexOf($scope.addMe) == -1) {
+                $scope.ingredientTypedIn.push($scope.addMe);
+            } else {
+                $scope.errortext = "The ingredient is already entered.";
+            }
+            $scope.ingredientTypedIn.push($scope.ingredient);
+        };
+        $scope.removeItem = function(ingredients){
+            $scope.errortext = "";
+            $scope.ingredientTypedIn.splice(ingredients, 1);
+
+        };
+        $scope.errortext = function(){
+
+
+        };
 
     }]);
-
-
