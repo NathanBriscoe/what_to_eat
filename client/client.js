@@ -39,24 +39,14 @@ app.config(['$routeProvider','$locationProvider', function($routeProvider, $loca
     }]);
                     //Controller for the recipes List
     app.controller('recipeListsController', ['$scope', '$http', function ($scope, $http) {
-        //$scope.$watch('search', function(){
-        //    fetch();
-        //    function fetch(){
-        //        $http.get("http://www.omdbapi.com/?t=" + $scope.search + "&tomatoes=true&plot=full")
-        //            .then(function(response){ $scope.details = response.data; });
-        //
-        //        $http.get("http://www.omdbapi.com/?s=" + $scope.search)
-        //            .then(function(response){ $scope.related = response.data; });
-        //    }
-        //})
+
     }]);
                 //Controller for building recipes
-    //app.controller('buildRecipesController', ['$scope', '$location', function ($scope, $location){
-    //    $scope.addIngredient = function
-    //
-    //}]);
-    app.controller('searchByIngredientsController', ['$scope', '$http', function($scope, $http){
+    app.controller('buildRecipesController', ['$scope', '$location', function ($scope, $location){
+        //$scope.addIngredient = function
 
+    }]);
+    app.controller('searchByIngredientsController', ['$scope', function($scope){
         $scope.ingredientTypedIn = [];
         $scope.addNewIngredient = function(){
             $scope.errortext = "";
@@ -66,16 +56,13 @@ app.config(['$routeProvider','$locationProvider', function($routeProvider, $loca
             } else {
                 $scope.errortext = "The ingredient is already entered.";
             }
-            $scope.ingredientTypedIn.push($scope.ingredient);
+            $scope.addMe = "";
         };
         $scope.removeItem = function(ingredients){
             $scope.errortext = "";
             $scope.ingredientTypedIn.splice(ingredients, 1);
 
         };
-        $scope.errortext = function(){
-
-
-        };
 
     }]);
+
