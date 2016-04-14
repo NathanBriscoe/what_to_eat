@@ -14,21 +14,11 @@ app.use(bodyParser.json());
 
 app.use(express.static('server/public'));// this is to use static files from the public folder such as img, css and javascript files
 
-
-
-
-//sever will offer up the Home Page
-app.get('/',function(request, response){
-   response.sendFile(__dirname + '/public/views/index.html');
-});
-
 app.use('/', index);
 
-
-
-
-
-
+app.get('/',function(request, response){//sever will offer up the Home Page
+   response.sendFile(__dirname + '/public/views/index.html');
+});
 
 var server = app.listen(3000, function(request, response){
     var port = server.address().port;

@@ -12,10 +12,6 @@ app.config(['$routeProvider','$locationProvider', function($routeProvider, $loca
         .when('/recipes', {
             templateUrl: 'views/recipes.html',
             controller: 'recipeListsController'
-        })
-        .when('/buildrecipes', {
-            templateUrl: 'views/buildrecipes.html',
-            controller: 'buildRecipeController'
         });
 
     $locationProvider.html5Mode(true);
@@ -39,11 +35,6 @@ app.controller('homeController', ['$scope', '$location', function ($scope, $loca
 }]);
                 //Controller for the recipes List
 app.controller('recipeListsController', ['$scope', '$http', function ($scope, $http) {
-
-}]);
-            //Controller for building recipes
-app.controller('buildRecipesController', ['$scope', '$location', function ($scope, $location){
-    //$scope.addIngredient = function
 
 }]);
 
@@ -70,10 +61,10 @@ app.controller('searchByIngredientsController', ['$scope', '$http', function($sc
 
     $scope.submitIngredients = function(){
         console.log("client side console for $scope ingredient typed in", $scope.ingredientTypedIn);
-        $http.get("/whatCanIMake", $scope.ingredientTypedIn).then(function(response){
+        $http.get("/whatCanIMake", {params: $scope.ingredientTypedIn})
+            .then(function(response){
             $scope.list = response.data;
             $scope.recipes = response;
-            //$scope.ingredientTypedIn = [];
         });
     };
 
