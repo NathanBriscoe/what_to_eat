@@ -2,19 +2,20 @@
  * Created by NathanBriscoe on 3/28/16.
  */
 var express = require('express');
-var app = express();
-var path = require('path');
-var router = express.Router();// get an instance of the express Router
 var request = require('request');
+var path = require('path');
+var router = express.Router();
 
 //[][][][][][][][][][][][][][][][][][][]Start Making API server side call here[][][][][][][][][][][][][][][][][][][][][]
 
 router.get("/whatCanIMake", function(request, response){
+    console.log("router.get request.body", request.body);
 
     var inputIngredients = request.body.params;
+    console.log("console for inputIngredients = request.body.params", inputIngredients);
     var api = "http://www.recipepuppy.com/api/?i=" + inputIngredients + "";
 
-    request(api, function(err, response){
+    request.get(api, function(err, response, body){
 
     });
 

@@ -4,15 +4,17 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var index = require('./routes/index');
 
-
-
-app.use(express.static('server/public'));// this is to use static files from the public folder such as img, css and javascript files
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+app.use(express.static('server/public'));// this is to use static files from the public folder such as img, css and javascript files
+
+
 
 
 //sever will offer up the Home Page
@@ -20,7 +22,7 @@ app.get('/',function(request, response){
    response.sendFile(__dirname + '/public/views/index.html');
 });
 
-
+app.use('/', index);
 
 
 
