@@ -46,8 +46,12 @@ app.config(['$routeProvider','$locationProvider', function($routeProvider, $loca
         //$scope.addIngredient = function
 
     }]);
-    app.controller('searchByIngredientsController', ['$scope', function($scope){
+
+    app.controller('searchByIngredientsController', ['$scope', '$http', function($scope, $http){
+
         $scope.ingredientTypedIn = [];
+        //$scope.data = [];
+
         $scope.addNewIngredient = function(){
             $scope.errortext = "";
             if (!$scope.addMe) {return;}
@@ -58,11 +62,33 @@ app.config(['$routeProvider','$locationProvider', function($routeProvider, $loca
             }
             $scope.addMe = "";
         };
+
         $scope.removeItem = function(ingredients){
             $scope.errortext = "";
             $scope.ingredientTypedIn.splice(ingredients, 1);
 
         };
 
-    }]);
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 
+
+
+
+
+        //This is a bunch of nonsense below. I'm testing
+
+        $scope.submitIngredients = function(ingredientTypedIn){
+            console.log("We are going to go look for ");
+            console.log(ingredientTypedIn);
+            $http.get("http://www.recipepuppy.com/api/?i=" + ingredientTypedIn + "").then(function(response){
+                $scope.list = response.data;
+                console.log(ingredientTypedIn);
+                $scope.recipes = response;
+                $scope.ingredientTypedIn = [];
+                //$scope.data = [];
+                //$scope.data.push(response.data);
+                //$scope.ingredientTypedIn.push(response.data);
+            });
+        };
+
+    }]);
