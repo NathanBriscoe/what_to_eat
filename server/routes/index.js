@@ -6,25 +6,26 @@ var request = require('request');
 var path = require('path');
 var router = express.Router();
 
-//[][][][][][][][][][][][][][][][][][][]Start Making API server side call here[][][][][][][][][][][][][][][][][][][][][]
-
+//At this point the request and API are set up. Now the response needs to come back to the DOM
 router.get("/whatCanIMake", function(request, response){
-
     var inputIngredients = request.query;
     var ingredientString = "";
-    console.log(inputIngredients);
-
-    for (var i; i < inputIngredients.length; i++){ingredientString += inputIngredients[i] + "," }
-
-    var api = "http://www.recipepuppy.com/api/?i=" + inputIngredients + "";
+    for (var i in inputIngredients){
+        ingredientString += inputIngredients[i] + ",";
+    }
+    var api = "http://www.recipepuppy.com/api/?i=" + ingredientString + "";
 
     request.get(api, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             console.log(body);
+            var results = response.results;
         }
+
+            console.log(results);
+            res.send(results);
+
     });
-
-
+    console.log("response.results", response.results);
 });
 
 router.get('/', function(request, response){

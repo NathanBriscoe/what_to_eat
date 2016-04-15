@@ -58,12 +58,14 @@ app.controller('searchByIngredientsController', ['$scope', '$http', function($sc
         $scope.ingredientTypedIn.splice(ingredients, 1);
 
     };
+    //I believe the problem starts below. The console.log in the "inspect elements" comes up as ["milk", "flour", "egg"]
+    //but if you go over to the server side routes/index.js line 14's console.log you get this { '0': 'milk', '1': 'flour', '2': 'egg' }
 
     $scope.submitIngredients = function(){
         console.log($scope.ingredientTypedIn);
         $http.get("/whatCanIMake", {params: $scope.ingredientTypedIn})
             .then(function(response){
-            $scope.list = response.data;
+            $scope.list = response.results;
             $scope.recipes = response;
         });
     };
