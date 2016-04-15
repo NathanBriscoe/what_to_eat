@@ -11,14 +11,20 @@ var router = express.Router();
 router.get("/whatCanIMake", function(request, response){
 
     var inputIngredients = request.query;
+    var ingredientString = "";
     console.log(inputIngredients);
+
+    for (var i; i < inputIngredients.length; i++){ingredientString += inputIngredients[i] + "," }
+
     var api = "http://www.recipepuppy.com/api/?i=" + inputIngredients + "";
 
     request.get(api, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body); // Show the HTML for the Google homepage.
+            console.log(body);
         }
-    })
+    });
+
+
 });
 
 router.get('/', function(request, response){

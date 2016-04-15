@@ -60,7 +60,7 @@ app.controller('searchByIngredientsController', ['$scope', '$http', function($sc
     };
 
     $scope.submitIngredients = function(){
-        console.log("client side console for $scope ingredient typed in", $scope.ingredientTypedIn);
+        console.log($scope.ingredientTypedIn);
         $http.get("/whatCanIMake", {params: $scope.ingredientTypedIn})
             .then(function(response){
             $scope.list = response.data;
