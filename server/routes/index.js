@@ -8,11 +8,14 @@ var router = express.Router();
 
 //At this point the request and API are set up. Now the response needs to come back to the DOM
 router.get("/whatCanIMake", function(request, response){
+
     var inputIngredients = request.query;
     var ingredientString = "";
+
     for (var i in inputIngredients){
         ingredientString += inputIngredients[i] + ",";
     }
+
     var api = "http://www.recipepuppy.com/api/?i=" + ingredientString + "";
 
     request.get(api, function (error, response, body) {
@@ -20,12 +23,11 @@ router.get("/whatCanIMake", function(request, response){
             console.log(body);
             var results = response.results;
         }
-
             console.log(results);
             res.send(results);
-
     });
     console.log("response.results", response.results);
+    console.log(api);
 });
 
 router.get('/', function(request, response){

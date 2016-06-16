@@ -5,40 +5,72 @@ var app = angular.module('WhatToEat', ['ngRoute']);
 
 app.config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
+        //routing to the main page
         .when('/index.html', {
             templateUrl: 'views/index.html',
             controller: 'homeController'
         })
+        //routing to the recipes page
         .when('/recipes', {
             templateUrl: 'views/recipes.html',
-            controller: 'recipeListsController'
+            controller: 'searchByController'
+        })
+        //routing to the build a recipe page
+        .when('/buildrecipes', {
+            templateUrl: 'views/buildrecipes.html',
+            controller: 'buildRecipe'
+        })
+        //routing to the meal planner page
+        .when('/mealPlanner', {
+            templateUrl: 'views/mealPlanner.html',
+            controller: 'mealPlanning'
+        })
+        //routing to the grocery shopping list
+        .when('/shoppingList', {
+            templateUrl: 'views/shoppinglist.html',
+            controller: 'shoppingList'
         });
 
     $locationProvider.html5Mode(true);
 
     }]);
-                    //Controller for the home...?
+
+//Controller for the home...?
 app.controller('homeController', ['$scope', '$location', function ($scope, $location) {
+    //buttons that run the function to the url saying go to this page
+    //button click function brings us to the recipes pages
     $scope.recipes = function(){
         $location.path('/recipes')
     };
+    //button click function brings us to the build recipes page
     $scope.buildRecipes = function(){
         $location.path('/buildrecipes')
     };
+    //button click function brings us to the meal planner page
+    $scope.mealPlanner = function(){
+        $location.path('/mealPlanner')
+    };
+    //button click function brings us to the shopping list page
+    $scope.shoppingList = function(){
+        $location.path('/shoppingList')
+    };
+    //time on the main page
     $scope.today = moment().format('MMMM Do YYYY');
 
     var myTimer = setInterval(myClock, 1000);
     function myClock() {
-        document.getElementById("demo").innerHTML =
+        document.getElementById("clock").innerHTML =
             new Date().toLocaleTimeString();
     }
 }]);
-                //Controller for the recipes List
-app.controller('recipeListsController', ['$scope', '$http', function ($scope, $http) {
+
+//Controller for the recipes List
+app.controller('buildRecipe', ['$scope', '$http', function ($scope, $http) {
 
 }]);
 
-app.controller('searchByIngredientsController', ['$scope', '$http', function($scope, $http){
+//Controller to search by ingredients
+app.controller('searchByController', ['$scope', '$http', function($scope, $http){
 
     $scope.ingredientTypedIn = [];
 
@@ -58,8 +90,6 @@ app.controller('searchByIngredientsController', ['$scope', '$http', function($sc
         $scope.ingredientTypedIn.splice(ingredients, 1);
 
     };
-    //I believe the problem starts below. The console.log in the "inspect elements" comes up as ["milk", "flour", "egg"]
-    //but if you go over to the server side routes/index.js line 14's console.log you get this { '0': 'milk', '1': 'flour', '2': 'egg' }
 
     $scope.submitIngredients = function(){
         console.log($scope.ingredientTypedIn);
@@ -70,4 +100,25 @@ app.controller('searchByIngredientsController', ['$scope', '$http', function($sc
         });
     };
 
+}]);
+
+app.controller('mealPlanning', ['$scope', '$http', function($scope, $http){
+
+}]);
+
+app.controller('shoppingList', ['$scope', '$http', function($scope, $http){
+        $scope.todoList = [{todoText:'Eggs', done:false}];
+
+        $scope.todoAdd = function() {
+            $scope.todoList.push({todoText:$scope.todoInput, done:false});
+            $scope.todoInput = "";
+        };
+
+        $scope.remove = function() {
+            var oldList = $scope.todoList;
+            $scope.todoList = [];
+            angular.forEach(oldList, function(x) {
+                if (!x.done) $scope.todoList.push(x);
+            });
+        }
 }]);

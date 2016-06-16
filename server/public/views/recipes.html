@@ -1,24 +1,24 @@
-<div>
+<!--This part is not needed as it is not hooked up yet-->
+<!--<div>-->
+    <!--Search:-->
+        <!--<input ng-model="query">-->
+    <!---->
+    <!--Sort by:-->
+        <!--<select ng-model="orderProp">-->
+            <!--<option value="name">Alphabetical</option>-->
+            <!--<option value="calories">Calories</option>-->
+            <!--<option value="time">Prep Time</option>-->
+        <!--</select>-->
 
-    Search:
-        <input ng-model="query">
+    <!--<p>Total Number of Recipes: {{recipes}}</p>-->
 
-    Sort by:
-        <select ng-model="orderProp">
-            <option value="name">Alphabetical</option>
-            <option value="calories">Calories</option>
-            <option value="time">Prep Time</option>
-        </select>
+    <!--<div class="input-group search-bar">-->
+        <!--<input type="text" ng-model="search" placeholder="What are you hungry for?"/>-->
+    <!--</div>-->
 
-    <p>Total Number of Recipes: {{recipes}}</p>
+<!--</div>-->
 
-    <div class="input-group search-bar">
-        <input type="text" ng-model="search" placeholder="What are you hungry for?"/>
-    </div>
-
-</div>
-
-<div ng-controller="searchByIngredientsController">
+<div ng-controller="searchByController">
     <h3>Search by what ingredients you have:</h3>
         Ingredient:<br>
         <ul>
@@ -27,10 +27,9 @@
                 <span ng-click="removeItem($index)">&times;</span>
             </li>
         </ul>
-        <input type="text" placeholder="Enter Ingredient" ng-model="addMe">
-        <button ng-click="addNewIngredient()">Add</button>
-        <p>{{errortext}}</p>
+    <input type="text" placeholder="Enter Ingredient" ng-model="addMe">
+    <button ng-click="addNewIngredient()">Add</button>
+    <p>{{errortext}}</p>
     <button ng-click="submitIngredients()">Submit</button>
     <h1 ng-model="list">{{list}}</h1>
-
 </div>

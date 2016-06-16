@@ -1,0 +1,13 @@
+<div ng-controller="shoppingList">
+    <h2>My Shopping List</h2>
+
+    <form ng-submit="todoAdd()">
+        <input type="text" ng-model="todoInput" size="50" placeholder="Add New">
+        <input type="submit" value="Add New">
+    </form>
+    <br>
+    <div ng-repeat="x in todoList">
+        <input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
+    </div>
+    <p><button ng-click="remove()">Remove marked</button></p>
+</div>
