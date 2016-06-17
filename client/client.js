@@ -37,6 +37,16 @@ app.config(['$routeProvider','$locationProvider', function($routeProvider, $loca
 
 //Controller for the home...?
 app.controller('homeController', ['$scope', '$location', function ($scope, $location) {
+
+    $scope.openNav = function() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    };
+
+    $scope.closeNav = function() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+    };
     //buttons that run the function to the url saying go to this page
     //button click function brings us to the recipes pages
     $scope.recipes = function(){
@@ -62,6 +72,7 @@ app.controller('homeController', ['$scope', '$location', function ($scope, $loca
         document.getElementById("clock").innerHTML =
             new Date().toLocaleTimeString();
     }
+
 }]);
 
 //Controller for the recipes List
@@ -92,7 +103,7 @@ app.controller('searchByController', ['$scope', '$http', function($scope, $http)
     };
 
     $scope.submitIngredients = function(){
-        console.log($scope.ingredientTypedIn);
+        //console.log($scope.ingredientTypedIn);
         $http.get("/whatCanIMake", {params: $scope.ingredientTypedIn})
             .then(function(response){
             $scope.list = response.results;

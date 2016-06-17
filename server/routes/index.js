@@ -21,12 +21,13 @@ router.get("/whatCanIMake", function(request, response){
     request.get(api, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             console.log(body);
-            var results = response.results;
+            var results = response.data;
         }
-            console.log(results);
-            res.send(results);
+            response.send(results);
+        console.log("response.results", results);
     });
-    console.log("response.results", response.results);
+
+    console.log("response.results", results);
     console.log(api);
 });
 

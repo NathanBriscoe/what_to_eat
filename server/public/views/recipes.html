@@ -18,7 +18,7 @@
 
 <!--</div>-->
 
-<div ng-controller="searchByController">
+<div ng-controller="searchByController" class="recipespage">
     <h3>Search by what ingredients you have:</h3>
         Ingredient:<br>
         <ul>
@@ -29,7 +29,7 @@
         </ul>
     <input type="text" placeholder="Enter Ingredient" ng-model="addMe">
     <button ng-click="addNewIngredient()">Add</button>
-    <p>{{errortext}}</p>
+        <p>{{errortext}}</p>
     <button ng-click="submitIngredients()">Submit</button>
-    <h1 ng-model="list">{{list}}</h1>
+        <p ng-model="list">{{list}}</p>
 </div>
