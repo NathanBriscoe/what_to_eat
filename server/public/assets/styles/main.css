@@ -57,8 +57,7 @@ body {
 }
 
 .buildrecipespage{
-    display: inline-block;
-    float:right;
+    width: 100%;
 }
 
 .mealplannerpage{
@@ -71,4 +70,55 @@ body {
 
 .recipespage{
     display: inline-block;
+}
+
+.course{
+    display: inline-block;
+}
+
+.foodCategory{
+    display: inline-block;
+}
+
+.cuisine{
+    display: inline-block;
+}
+
+.prepTime{
+    display: inline-block;
+}
+
+.dropDownLists{
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 25px;
+    margin: auto;
+    width: 60%;
+}
+
+.ingredientSection{
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 25px;
+    margin: auto;
+    margin-top:1%;
+    width: 60%;
+}
+
+.ingredientsTitle{
+    margin-top:-1px;
+    margin-left:5px;
+    background:white;
+}
+
+.quantity{
+    display: inline-block;
+}
+
+.ingredient{
+    display: inline-block;
+}
+
+.displayedIngredients{
+    float: right;
 }

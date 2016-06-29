@@ -75,8 +75,36 @@ app.controller('homeController', ['$scope', '$location', function ($scope, $loca
 
 }]);
 
+
+
+
+
+
+
+
+
 //Controller for the recipes List
 app.controller('buildRecipe', ['$scope', '$http', function ($scope, $http) {
+
+    $scope.list = [];
+    $scope.one = "";
+    $scope.two = "";
+    $scope.three = "";
+
+    $scope.submitFunction = function() {
+        if ($scope.one && $scope.two && $scope.three) {
+            var string = this.one + " " + this.two + " " + this.three;
+            $scope.list.push(string);
+            $scope.one = '';
+            $scope.two = '';
+            $scope.three = '';
+        }
+    };
+
+    $scope.removeIngredient = function(ingredient){
+        console.log("fire");
+        $scope.list.splice(ingredient, 1)
+    }
 
 }]);
 
@@ -86,7 +114,9 @@ app.controller('searchByController', ['$scope', '$http', function($scope, $http)
     $scope.ingredientTypedIn = [];
 
     $scope.addNewIngredient = function(){
+
         $scope.errortext = "";
+        //if not anything return nothing
         if (!$scope.addMe) {return;}
         if ($scope.ingredientTypedIn.indexOf($scope.addMe) == -1) {
             $scope.ingredientTypedIn.push($scope.addMe);

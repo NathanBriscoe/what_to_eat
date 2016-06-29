@@ -1,8 +1,100 @@
 <div class="buildrecipespage">
-    <H1>Hello World</H1>
-        <p>You have reached the build your own recipes page</p>
 
     <div ng-controller="buildRecipe">
+        <div class="dropDownLists">
+            <div class="course">
+                <h3>Course:</h3>
+                <select>
+                    <option>Breads</option>
+                    <option>Desserts</option>
+                    <option>Main</option>
+                    <option>Salads</option>
+                    <option>Snacks</option>
+                    <option>Soups</option>
+                    <option>Starters</option>
+                </select>
+            </div>
+            <div class="foodCategory">
+                <h3>Food Category:</h3>
+                <select>
+                    <option>Beans</option>
+                    <option>Breads</option>
+                    <option>Desserts</option>
+                    <option>Fish</option>
+                    <option>Meat</option>
+                    <option>Pasta/Rice</option>
+                    <option>Poultry/Game</option>
+                    <option>Vegetarian</option>
+                </select>
+            </div>
+            <div class="cuisine">
+                <h3>Cuisine:</h3>
+                <select>
+                    <option>Chinese</option>
+                    <option>English</option>
+                    <option>Indian</option>
+                    <option>Italian</option>
+                    <option>Thai</option>
+                    <option>Traditional</option>
+                </select>
+            </div>
+            <div class="prepTime">
+            <h3>Prep Time:</h3>
+                <input>
+            </div>
+        </div>
 
+
+
+
+
+
+
+
+
+
+
+
+        <div class="ingredientSection" ng-controller="buildRecipe">
+
+            <form ng-submit="submitFunction()">
+
+
+
+                <h3>Quantity:</h3>
+                <input type="number" placeholder="Enter Ingredient" ng-model="one" name="one" />
+                <h3>Measurement:</h3>
+                <select ng-model="two" name="two">
+                    <option>lb</option>
+                    <option>oz</option>
+                    <option>fl oz</option>
+                    <option>cup(s)</option>
+                    <option>Tbsp</option>
+                    <option>ts</option>
+                </select>
+                <h3>Ingredient:</h3>
+                <input type="text" placeholder="Enter Amount" ng-model="three" name="three" />
+
+                <input type="submit" id="submit" value="Submit" />
+            </form>
+
+            <div class="displayedIngredients">
+                <h3>Displayed Recipe:</h3>
+                    <ul>
+                        <li ng-repeat="ingredient in list">
+                            {{ingredient}}
+                            <span ng-click="removeIngredient()">&times;</span>
+                        </li>
+                    </ul>
+            </div>
+
+            <div>
+                <h3>Notes:</h3>
+                <textarea placeholder="Helpful reminders...">
+
+                </textarea>
+            </div>
+            <button ng-click="submitIngredients()">Submit</button>
+        </div>
     </div>
 </div>

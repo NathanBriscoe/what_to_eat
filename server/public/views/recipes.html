@@ -27,9 +27,12 @@
                 <span ng-click="removeItem($index)">&times;</span>
             </li>
         </ul>
+
     <input type="text" placeholder="Enter Ingredient" ng-model="addMe">
+
     <button ng-click="addNewIngredient()">Add</button>
         <p>{{errortext}}</p>
+
     <button ng-click="submitIngredients()">Submit</button>
         <p ng-model="list">{{list}}</p>
 </div>
