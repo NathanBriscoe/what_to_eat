@@ -75,14 +75,6 @@ app.controller('homeController', ['$scope', '$location', function ($scope, $loca
 
 }]);
 
-
-
-
-
-
-
-
-
 //Controller for the recipes List
 app.controller('buildRecipe', ['$scope', '$http', function ($scope, $http) {
 
@@ -91,7 +83,7 @@ app.controller('buildRecipe', ['$scope', '$http', function ($scope, $http) {
     $scope.two = "";
     $scope.three = "";
 
-    $scope.submitFunction = function() {
+    $scope.submitRecipe = function() {
         if ($scope.one && $scope.two && $scope.three) {
             var string = this.one + " " + this.two + " " + this.three;
             $scope.list.push(string);
@@ -104,7 +96,21 @@ app.controller('buildRecipe', ['$scope', '$http', function ($scope, $http) {
     $scope.removeIngredient = function(ingredient){
         console.log("fire");
         $scope.list.splice(ingredient, 1)
-    }
+    };
+
+    $scope.steps = [];
+    $scope.singleStep = "";
+
+    $scope.addStep = function(){
+        if($scope.singleStep){
+            $scope.steps.push(singleStep);
+            $scope.singleStep="";
+        }
+    };
+
+        $scope.removeStep = function(step){
+
+        }
 
 }]);
 

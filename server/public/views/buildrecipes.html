@@ -42,59 +42,71 @@
             <h3>Prep Time:</h3>
                 <input>
             </div>
+            <div class="cookTime">
+                <h3>Cook Time:</h3>
+                <input>
+            </div>
         </div>
+        <div class="descriptionTextArea">
+            <h3>Description of the recipe</h3>
+            <textarea style="margin: 0px; width: 99%; height: 114px;"></textarea>
+        </div>
+        <div class="ingredientSection">
 
+            <form ng-submit="submitRecipe()" class="formSection">
+                <div class="quantity">
+                    <p class="quantityP">Quantity:</p>
+                    <input type="number" placeholder="Enter Amount" ng-model="one" name="one" />
+                </div>
+                <div class="measurement">
+                    <p class="measurementP">Measurement:</p>
+                    <select ng-model="two" name="two">
+                        <option> </option>
+                        <option>tsp</option>
+                        <option>tbsp</option>
+                        <option>cup</option>
+                        <option>fl oz</option>
+                        <option>oz</option>
+                        <option>lb</option>
 
-
-
-
-
-
-
-
-
-
-
-        <div class="ingredientSection" ng-controller="buildRecipe">
-
-            <form ng-submit="submitFunction()">
-
-
-
-                <h3>Quantity:</h3>
-                <input type="number" placeholder="Enter Ingredient" ng-model="one" name="one" />
-                <h3>Measurement:</h3>
-                <select ng-model="two" name="two">
-                    <option>lb</option>
-                    <option>oz</option>
-                    <option>fl oz</option>
-                    <option>cup(s)</option>
-                    <option>Tbsp</option>
-                    <option>ts</option>
-                </select>
-                <h3>Ingredient:</h3>
-                <input type="text" placeholder="Enter Amount" ng-model="three" name="three" />
+                    </select>
+                </div>
+                <div class="ingredient">
+                    <p class="ingredientP">Ingredient:</p>
+                    <input type="text" placeholder="Enter Ingredient" ng-model="three" name="three" />
+                    <p>{{errortext}}</p>
+                </div>
 
                 <input type="submit" id="submit" value="Submit" />
-            </form>
 
-            <div class="displayedIngredients">
-                <h3>Displayed Recipe:</h3>
+            </form>
+                <div class="displayedIngredients">
+                <h3 class="displayedRecipe">Displayed Recipe:</h3>
                     <ul>
-                        <li ng-repeat="ingredient in list">
+                        <li ng-repeat="ingredient in list" class="list">
                             {{ingredient}}
                             <span ng-click="removeIngredient()">&times;</span>
                         </li>
                     </ul>
             </div>
+                <div class="displayedSteps">
 
-            <div>
-                <h3>Notes:</h3>
-                <textarea placeholder="Helpful reminders...">
+                    <h3 class="steps">Steps</h3>
+                    <form ng-submit="addStep()">
+                    <input type="submit" id="submitStep" value="Submit" />
+                    </form>
 
-                </textarea>
+                    <input ng-model="singleStep" name="singleStep">
+
+
+                    <ul>
+                        <li ng-repeat="step in steps" class="step">
+                            {{step}}
+                            <span ng-click="removeStep()">&times;</span>
+
+                        </li>
+                    </ul>
             </div>
-            <button ng-click="submitIngredients()">Submit</button>
         </div>
     </div>
 </div>

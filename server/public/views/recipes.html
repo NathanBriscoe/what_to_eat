@@ -1,22 +1,22 @@
 <!--This part is not needed as it is not hooked up yet-->
-<!--<div>-->
-    <!--Search:-->
-        <!--<input ng-model="query">-->
-    <!---->
-    <!--Sort by:-->
-        <!--<select ng-model="orderProp">-->
-            <!--<option value="name">Alphabetical</option>-->
-            <!--<option value="calories">Calories</option>-->
-            <!--<option value="time">Prep Time</option>-->
-        <!--</select>-->
+<div>
+    Search:
+        <input ng-model="query">
 
-    <!--<p>Total Number of Recipes: {{recipes}}</p>-->
+    Sort by:
+        <select ng-model="orderProp">
+            <option value="name">Alphabetical</option>
+            <option value="calories">Calories</option>
+            <option value="time">Prep Time</option>
+        </select>
 
-    <!--<div class="input-group search-bar">-->
-        <!--<input type="text" ng-model="search" placeholder="What are you hungry for?"/>-->
-    <!--</div>-->
+    <p>Total Number of Recipes: {{recipes}}</p>
 
-<!--</div>-->
+    <div class="input-group search-bar">
+        <input type="text" ng-model="search" placeholder="What are you hungry for?"/>
+    </div>
+
+</div>
 
 <div ng-controller="searchByController" class="recipespage">
     <h3>Search by what ingredients you have:</h3>

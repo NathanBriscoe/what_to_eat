@@ -1,124 +1,248 @@
 body {
-    font-family: "Lato", sans-serif;
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
 }
-
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
+p {font-size: 16px;}
+.margin {margin-bottom: 45px;}
+.bg-1 {
+    background-color: #18BC9C; /* Green */
+    color: #ffffff;
 }
-
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s
+.bg-2 {
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
 }
-
-.sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
+.bg-3 {
+    background-color: #ffffff; /* White */
+    color: #555555;
 }
-
-.closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px !important;
-    margin-left: 50px;
+.bg-4 {
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
 }
-
-#main {
-    transition: margin-left .5s;
-    padding: 16px;
-    display: inline-block;
-    float: left;
+.container-fluid {
+    padding-top: 160px;
+    padding-bottom: 70px;
 }
-
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+.navbar {
+    background-color: #2C3E50;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0px;
+    margin-bottom: 0px;
+    font-size: 12px;
+    letter-spacing: 5px;
 }
-
-.greeting{
-    display: inline-block;
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
 }
-.clock{
-    display: inline-block;
-    float:right;
-}
-
-.buildrecipespage{
-    width: 100%;
-}
-
-.mealplannerpage{
-    display: inline-block;
-}
-
-.shoppinglistpage{
-    display: inline-block;
-}
-
-.recipespage{
-    display: inline-block;
-}
-
-.course{
-    display: inline-block;
-}
-
-.foodCategory{
-    display: inline-block;
-}
-
-.cuisine{
-    display: inline-block;
-}
-
-.prepTime{
-    display: inline-block;
-}
-
-.dropDownLists{
-    border: 2px solid black;
-    border-radius: 12px;
-    padding: 25px;
-    margin: auto;
-    width: 60%;
-}
-
-.ingredientSection{
-    border: 2px solid black;
-    border-radius: 12px;
-    padding: 25px;
-    margin: auto;
-    margin-top:1%;
-    width: 60%;
-}
-
-.ingredientsTitle{
-    margin-top:-1px;
-    margin-left:5px;
-    background:white;
-}
-
-.quantity{
-    display: inline-block;
-}
-
-.ingredient{
-    display: inline-block;
-}
-
-.displayedIngredients{
+.navbar-toggle {
+    position: relative;
     float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: white;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
+
+
+
+
+
+
+
+
+
+
+
+/*body {*/
+    /*font-family: "Lato", sans-serif;*/
+/*}*/
+
+/*.sidenav {*/
+    /*height: 100%;*/
+    /*width: 0;*/
+    /*position: fixed;*/
+    /*z-index: 1;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*background-color: #111;*/
+    /*overflow-x: hidden;*/
+    /*transition: 0.5s;*/
+    /*padding-top: 60px;*/
+/*}*/
+
+/*.sidenav a {*/
+    /*padding: 8px 8px 8px 32px;*/
+    /*text-decoration: none;*/
+    /*font-size: 25px;*/
+    /*color: #818181;*/
+    /*display: block;*/
+    /*transition: 0.3s*/
+/*}*/
+
+/*.sidenav a:hover, .offcanvas a:focus{*/
+    /*color: #f1f1f1;*/
+/*}*/
+
+/*.closebtn {*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*right: 25px;*/
+    /*font-size: 36px !important;*/
+    /*margin-left: 50px;*/
+/*}*/
+
+/*#main {*/
+    /*transition: margin-left .5s;*/
+    /*padding: 16px;*/
+    /*display: inline-block;*/
+    /*float: left;*/
+/*}*/
+
+/*@media screen and (max-height: 450px) {*/
+    /*.sidenav {padding-top: 15px;}*/
+    /*.sidenav a {font-size: 18px;}*/
+/*}*/
+
+/*.greeting{*/
+    /*display: inline-block;*/
+    /*text-align: center;*/
+    /*width: 88%;*/
+/*}*/
+/*.clock{*/
+    /*display: inline-block;*/
+    /*float:right;*/
+/*}*/
+
+/*.buildrecipespage{*/
+    /*width: 100%;*/
+/*}*/
+
+/*.mealplannerpage{*/
+    /*display: inline-block;*/
+/*}*/
+
+/*.shoppinglistpage{*/
+    /*display: inline-block;*/
+/*}*/
+/*!* build recipes page*!*/
+/*.recipespage{*/
+    /*display: inline-block;*/
+/*}*/
+/*!* build recipes page*!*/
+/*.course{*/
+    /*display: inline-block;*/
+/*}*/
+/*!* build recipes page*!*/
+/*.foodCategory{*/
+    /*display: inline-block;*/
+/*}*/
+/*!* build recipes page*!*/
+/*.cuisine{*/
+    /*display: inline-block;*/
+/*}*/
+/*!* build recipes page*!*/
+/*.prepTime{*/
+    /*display: inline-block;*/
+/*}*/
+/*!* build recipes page*!*/
+/*.dropDownLists{*/
+    /*border: 2px solid black;*/
+    /*border-radius: 12px;*/
+    /*padding: 25px;*/
+    /*margin: auto;*/
+    /*width: 60%;*/
+/*}*/
+/*!*build recipes page*!*/
+/*.ingredientSection{*/
+    /*border: 2px solid black;*/
+    /*border-radius: 12px;*/
+    /*padding: 25px;*/
+    /*margin: auto;*/
+    /*margin-top:1%;*/
+    /*width: 60%;*/
+/*}*/
+/*!*build recipes page*!*/
+/*.quantity{*/
+    /*display: inline-block;*/
+/*}*/
+/*!*build recipes page*!*/
+/*.ingredient{*/
+    /*display: inline-block;*/
+/*}*/
+/*!*build recipes page*!*/
+/*.displayedIngredients{*/
+    /*float: right;*/
+    /*display: inline-block;*/
+    /*border: 2px solid blue;*/
+    /*width: 35%;*/
+    /*padding: 2%;*/
+/*}*/
+
+/*.formSection{*/
+    /*display:inline-block;*/
+/*}*/
+
+/*.quantity{*/
+    /*display:inline-block;*/
+/*}*/
+
+/*.quantityP{*/
+    /*margin: 1px;*/
+/*}*/
+
+/*.measurement{*/
+    /*display:inline-block;*/
+    /*margin: 1px;*/
+/*}*/
+
+/*.measurementP{*/
+    /*margin: 1px;*/
+/*}*/
+
+/*.ingredient{*/
+    /*display:inline-block;*/
+    /*margin: 1px;*/
+/*}*/
+
+/*.ingredientP{*/
+    /*margin: 1px;*/
+/*}*/
+
+/*.displayedRecipe{*/
+    /*margin: auto;*/
+    /*width: 57%;*/
+/*}*/
+
+/*.descriptionTextArea{*/
+    /*border: 2px solid black;*/
+    /*border-radius: 12px;*/
+    /*padding: 25px;*/
+    /*margin: auto;*/
+    /*margin-top: 1%;*/
+    /*width: 60%;*/
+/*}*/
+
+/*.cookTime{*/
+    /*display:inline-block;*/
+/*}*/
+
+/*.list{*/
+    /*!*margin:auto;*!*/
+    /*!*width:50%;*!*/
+    /*text-align: center;*/
+    /*list-style-type:none;*/
+    /*padding: 1px;*/
+/*}*/
+
+/*ul{*/
+    /*padding: 1px;*/
+/*}*/
+

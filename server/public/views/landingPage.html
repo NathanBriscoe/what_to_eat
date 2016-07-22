@@ -1,0 +1,38 @@
+
+<body ng-controller="homeController">
+
+<h1 class="greeting">Hey there! Let's get started</h1>
+<div class="clock">{{today}}<p id="clock">Clock</p></div>
+
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" ng-click="closeNav()">×</a>
+    <a ng-click="recipes()">Frankenstein</a>
+    <a ng-click="buildRecipes()">Build your own</a>
+    <a ng-click="mealPlanner()">Meal Planner</a>
+    <a ng-click="shoppingList()">Shopping list</a>
+    <a ng-click="myRecipes()">Saved recipes</a>
+
+</div>
+
+<div id="main">
+    <span style="font-size:30px;cursor:pointer" ng-click="openNav()">☰</span>
+</div>
+
+
+
+<!--connects-->
+<!--<button ng-click="recipes()">Frankenstein</button>-->
+<!--connects-->
+<!--<button ng-click="buildRecipes()">Build your own</button>-->
+<!--connects-->
+<!--<button ng-click="mealPlanner()">Meal Planner</button>-->
+<!--does not connect-->
+<!--<button ng-click="shoppingList()">Shopping list</button>-->
+<!--does not connect-->
+<!--<button ng-click="myRecipes()">Saved recipes</button>-->
+<div class="view-container">
+    <div ng-view class="view-frame"></div>
+</div>
+
+</body>
