@@ -25,6 +25,17 @@ p {font-size: 16px;}
     padding-top: 160px;
     padding-bottom: 70px;
 }
+
+.container-fluid .bg-2 {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.navbar .container{
+    width: 100%;
+}
+
 .navbar {
     background-color: #2C3E50;
     padding-top: 15px;
@@ -38,211 +49,210 @@ p {font-size: 16px;}
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
 }
-.navbar-toggle {
+
+.navbar-header .navbar-toggle {
     position: relative;
     float: right;
     padding: 9px 10px;
     margin-top: 8px;
     margin-right: 15px;
     margin-bottom: 8px;
-    background-color: white;
-    background-image: none;
+    background-color: #18BC9C;
+    color: #fff;
     border: 1px solid transparent;
     border-radius: 4px;
 }
 
+.row{
+    margin-left: 20px;
+    margin-right: 20px;
+}
 
+.row-image{
 
+}
 
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
 
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
 
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
 
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px !important;
+    margin-left: 50px;
+}
 
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+    display: inline-block;
+    float: left;
+}
 
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
 
+.greeting{
+    display: inline-block;
+    text-align: center;
+    width: 88%;
+}
+.clock{
+    display: inline-block;
+    float:right;
+    color:#337ab7;
+    padding-right: 14%;
+}
 
-/*body {*/
-    /*font-family: "Lato", sans-serif;*/
-/*}*/
+.buildrecipespage{
+    width: 100%;
+    background-color: #18BC9C;
+}
 
-/*.sidenav {*/
-    /*height: 100%;*/
-    /*width: 0;*/
-    /*position: fixed;*/
-    /*z-index: 1;*/
-    /*top: 0;*/
-    /*left: 0;*/
-    /*background-color: #111;*/
-    /*overflow-x: hidden;*/
-    /*transition: 0.5s;*/
-    /*padding-top: 60px;*/
-/*}*/
+.mealplannerpage{
+    display: inline-block;
+}
 
-/*.sidenav a {*/
-    /*padding: 8px 8px 8px 32px;*/
-    /*text-decoration: none;*/
-    /*font-size: 25px;*/
-    /*color: #818181;*/
-    /*display: block;*/
-    /*transition: 0.3s*/
-/*}*/
+.shoppinglistpage{
+    display: inline-block;
+}
+/* build recipes page*/
+.recipespage{
+    display: inline-block;
+}
+/* build recipes page*/
+.course{
+    display: inline-block;
+}
+/* build recipes page*/
+.foodCategory{
+    display: inline-block;
+}
+/* build recipes page*/
+.cuisine{
+    display: inline-block;
+}
+/* build recipes page*/
+.prepTime{
+    display: inline-block;
+}
+/* build recipes page*/
+.dropDownLists{
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 25px;
+    margin: auto;
+    width: 60%;
+}
+/*build recipes page*/
+.ingredientSection{
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 25px;
+    margin: auto;
+    margin-top:1%;
+    width: 60%;
+}
+/*build recipes page*/
+.quantity{
+    display: inline-block;
+}
+/*build recipes page*/
+.ingredient{
+    display: inline-block;
+}
+/*build recipes page*/
+.displayedIngredients{
+    float: right;
+    display: inline-block;
+    border: 2px solid blue;
+    width: 35%;
+    padding: 2%;
+}
 
-/*.sidenav a:hover, .offcanvas a:focus{*/
-    /*color: #f1f1f1;*/
-/*}*/
+.formSection{
+    display:inline-block;
+}
 
-/*.closebtn {*/
-    /*position: absolute;*/
-    /*top: 0;*/
-    /*right: 25px;*/
-    /*font-size: 36px !important;*/
-    /*margin-left: 50px;*/
-/*}*/
+.quantity{
+    display:inline-block;
+}
 
-/*#main {*/
-    /*transition: margin-left .5s;*/
-    /*padding: 16px;*/
-    /*display: inline-block;*/
-    /*float: left;*/
-/*}*/
+.quantityP{
+    margin: 1px;
+}
 
-/*@media screen and (max-height: 450px) {*/
-    /*.sidenav {padding-top: 15px;}*/
-    /*.sidenav a {font-size: 18px;}*/
-/*}*/
+.measurement{
+    display:inline-block;
+    margin: 1px;
+}
 
-/*.greeting{*/
-    /*display: inline-block;*/
-    /*text-align: center;*/
-    /*width: 88%;*/
-/*}*/
-/*.clock{*/
-    /*display: inline-block;*/
-    /*float:right;*/
-/*}*/
+.measurementP{
+    margin: 1px;
+}
 
-/*.buildrecipespage{*/
-    /*width: 100%;*/
-/*}*/
+.ingredient{
+    display:inline-block;
+    margin: 1px;
+}
 
-/*.mealplannerpage{*/
-    /*display: inline-block;*/
-/*}*/
+.ingredientP{
+    margin: 1px;
+}
 
-/*.shoppinglistpage{*/
-    /*display: inline-block;*/
-/*}*/
-/*!* build recipes page*!*/
-/*.recipespage{*/
-    /*display: inline-block;*/
-/*}*/
-/*!* build recipes page*!*/
-/*.course{*/
-    /*display: inline-block;*/
-/*}*/
-/*!* build recipes page*!*/
-/*.foodCategory{*/
-    /*display: inline-block;*/
-/*}*/
-/*!* build recipes page*!*/
-/*.cuisine{*/
-    /*display: inline-block;*/
-/*}*/
-/*!* build recipes page*!*/
-/*.prepTime{*/
-    /*display: inline-block;*/
-/*}*/
-/*!* build recipes page*!*/
-/*.dropDownLists{*/
-    /*border: 2px solid black;*/
-    /*border-radius: 12px;*/
-    /*padding: 25px;*/
-    /*margin: auto;*/
-    /*width: 60%;*/
-/*}*/
-/*!*build recipes page*!*/
-/*.ingredientSection{*/
-    /*border: 2px solid black;*/
-    /*border-radius: 12px;*/
-    /*padding: 25px;*/
-    /*margin: auto;*/
-    /*margin-top:1%;*/
-    /*width: 60%;*/
-/*}*/
-/*!*build recipes page*!*/
-/*.quantity{*/
-    /*display: inline-block;*/
-/*}*/
-/*!*build recipes page*!*/
-/*.ingredient{*/
-    /*display: inline-block;*/
-/*}*/
-/*!*build recipes page*!*/
-/*.displayedIngredients{*/
-    /*float: right;*/
-    /*display: inline-block;*/
-    /*border: 2px solid blue;*/
-    /*width: 35%;*/
-    /*padding: 2%;*/
-/*}*/
+.displayedRecipe{
+    margin: auto;
+    width: 57%;
+}
 
-/*.formSection{*/
-    /*display:inline-block;*/
-/*}*/
+.descriptionTextArea{
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 25px;
+    margin: auto;
+    margin-top: 1%;
+    width: 60%;
+}
 
-/*.quantity{*/
-    /*display:inline-block;*/
-/*}*/
+.cookTime{
+    display:inline-block;
+}
 
-/*.quantityP{*/
-    /*margin: 1px;*/
-/*}*/
+.list{
+    /*margin:auto;*/
+    /*width:50%;*/
+    text-align: center;
+    list-style-type:none;
+    padding: 1px;
+}
 
-/*.measurement{*/
-    /*display:inline-block;*/
-    /*margin: 1px;*/
-/*}*/
-
-/*.measurementP{*/
-    /*margin: 1px;*/
-/*}*/
-
-/*.ingredient{*/
-    /*display:inline-block;*/
-    /*margin: 1px;*/
-/*}*/
-
-/*.ingredientP{*/
-    /*margin: 1px;*/
-/*}*/
-
-/*.displayedRecipe{*/
-    /*margin: auto;*/
-    /*width: 57%;*/
-/*}*/
-
-/*.descriptionTextArea{*/
-    /*border: 2px solid black;*/
-    /*border-radius: 12px;*/
-    /*padding: 25px;*/
-    /*margin: auto;*/
-    /*margin-top: 1%;*/
-    /*width: 60%;*/
-/*}*/
-
-/*.cookTime{*/
-    /*display:inline-block;*/
-/*}*/
-
-/*.list{*/
-    /*!*margin:auto;*!*/
-    /*!*width:50%;*!*/
-    /*text-align: center;*/
-    /*list-style-type:none;*/
-    /*padding: 1px;*/
-/*}*/
-
-/*ul{*/
-    /*padding: 1px;*/
-/*}*/
+ul{
+    padding: 1px;
+}
 

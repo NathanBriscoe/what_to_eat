@@ -1,5 +1,18 @@
 April 15th, At this point the request and API are set up. Now the response needs to come back to the DOM
 
 ToDo:
-1.) Set default landing page up
-2.) Make all pages web responsive
+1.) Set default landing page up (check)
+2.) Get food-categories (i.e... snacks, soups, salads..etc) on landing page to all be equal heights, width, and aligned.
+ *Kristy's suggestions on what to look into*
+ -
+ -
+ -
+3.) Create a polymer element for sign up and login modals
+4.) On the landing page fix footer height
+ -
+ -
+ -
+5.) Landing page, extend height of green page to look even(meaning image is equal parts from navbar to bottom of screen
+ -
+ -
+ -

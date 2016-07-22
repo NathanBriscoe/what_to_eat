@@ -5,6 +5,10 @@ var app = angular.module('WhatToEat', ['ngRoute']);
 
 app.config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
+        .when('/', {
+            templateUrl: 'views/landingPage.html',
+            controller: 'homeController'
+        })
         //routing to the main page
         .when('/index.html', {
             templateUrl: 'views/index.html',
@@ -49,6 +53,9 @@ app.controller('homeController', ['$scope', '$location', function ($scope, $loca
     };
     //buttons that run the function to the url saying go to this page
     //button click function brings us to the recipes pages
+    $scope.landingPage = function(){
+        $location.path('/')
+    };
     $scope.recipes = function(){
         $location.path('/recipes')
     };
