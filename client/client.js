@@ -5,11 +5,12 @@ var app = angular.module('WhatToEat', ['ngRoute']);
 
 app.config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
+        //routing to the landing page
         .when('/', {
             templateUrl: 'views/landingPage.html',
             controller: 'homeController'
         })
-        //routing to the main page
+        //routing to the index page
         .when('/index.html', {
             templateUrl: 'views/index.html',
             controller: 'homeController'

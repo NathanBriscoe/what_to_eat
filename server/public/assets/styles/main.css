@@ -4,7 +4,7 @@ body {
     color: #f5f6f7;
 }
 p {font-size: 16px;}
-.margin {margin-bottom: 45px;}
+.recipes {margin-bottom: 45px;}
 .bg-1 {
     background-color: #18BC9C; /* Green */
     color: #ffffff;
@@ -31,9 +31,14 @@ p {font-size: 16px;}
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+    box-shadow: 3px 3px 3px black;
 }
 .navbar .container{
     width: 100%;
+}
+
+.hannibalImg{
+    margin-top: 6%;
 }
 
 .navbar {
@@ -45,6 +50,7 @@ p {font-size: 16px;}
     margin-bottom: 0px;
     font-size: 12px;
     letter-spacing: 5px;
+    box-shadow: -3px 9px 29px #0f0f0f;
 }
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
@@ -63,13 +69,29 @@ p {font-size: 16px;}
     border-radius: 4px;
 }
 
-.row{
-    margin-left: 20px;
-    margin-right: 20px;
+.food-categories{
+    height: 100%;
+    position:relative;
+    /*background:url("salads.jpg")no-repeat;*/
+    background-size: cover;
+    background-position: center;
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    border-radius: 9px;
+    /*height: 300px;*/
+    box-shadow: 0px 9px 17px grey;
 }
 
 .row-image{
+    padding: 1px;
+    margin: auto;
+    width: 87%;
+}
 
+.col-sm-4{
+    display: inline-block;
 }
 
 .sidenav {
@@ -256,3 +278,43 @@ ul{
     padding: 1px;
 }
 
+/*Build recips page below*/
+
+/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+.row.content {height: 1500px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+    .row.content {height: auto;}
+}
+
+/*KRISTY HERE BELOW*/
+
+/*.col-sm-3>.sidenav>nav>li{*/
+    /*position: relative;*/
+    /*padding: 10px 15px;*/
+    /*display: block;*/
+/*}*/
+
+/*.nav-stacked>li{*/
+    /*float: none;*/
+    /*display: inline-table;*/
+    /*padding: inherit;*/
+/*}*/

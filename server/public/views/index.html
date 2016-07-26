@@ -2,10 +2,14 @@
 <html lang="en" ng-app="WhatToEat">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <!--<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>What To Eat</title>
+    <link href="elements/todo-app.html" rel="import">
     <link href="assets/styles/main.css" rel="stylesheet">
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/paper-item/paper-item.html" rel="import">
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
     <script src="vendors/angular/angular.min.js"></script>
     <script src="vendors/angular-route/angular-route.min.js"></script>
     <script src="vendors/moment.min.js"></script>
@@ -33,6 +37,7 @@
             </div>
 
             <a class="navbar-brand" ng-click="landingPage()">What to Eat</a>
+
         </div>
 
         <div class="collapse navbar-collapse" id="myNavbar">
@@ -57,8 +62,6 @@
                         </div>
                     </div>
                 </div>
-
-
                 <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Log In</a></li>
             </ul>
             <div class="clock">{{today}}<p id="clock">Clock</p></div>
